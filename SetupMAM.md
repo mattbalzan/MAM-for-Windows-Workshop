@@ -1,6 +1,6 @@
 >✅ Setup Steps: MAM for Windows (Edge MAM / MAM‑without‑Enrollment)
 
-## 0️⃣ Prerequisites (do **not** skip)
+## 0️⃣ Prerequisites (MANDATORY)
 
 These are **hard requirements**, not best practices.
 
@@ -10,6 +10,7 @@ These are **hard requirements**, not best practices.
     *   Windows 11 (recommended), or
     *   Windows 10 20H2+ with required cumulative updates
 *   Microsoft Edge (current Stable or Extended Stable)
+*   Entra ID User Target test group
 *   **Device must NOT be Intune‑enrolled** (MDM breaks MAM for Windows) [\[https://fr...s/original\]](https://fr-prod.asyncgw.teams.microsoft.com/v1/objects/0-eus-d6-67d80315cdf90406d6dc43d502dca379/views/original)
 
 ***
@@ -29,7 +30,7 @@ Users stay **unmanaged**, which is required for Windows MAM to apply [\[learn.mi
 
 ***
 
-## 2️⃣ (Optional but recommended) Enable Windows Security Center connector
+## 2️⃣ Enable Windows Security Center connector
 
 This allows **lightweight health signals** (not compliance).
 
@@ -115,7 +116,7 @@ Only **Edge with MAM** can access M365 from unmanaged devices [\[learn.microsoft
 
 ***
 
-## 5️⃣ (Optional) Configure Edge behavior with App Configuration Policy
+## 5️⃣ Configure Edge behavior with App Configuration Policy
 
 This shapes the browser UX.
 
@@ -162,7 +163,7 @@ On the test device:
 
 ***
 
-# ✅ What you’ve built (POC summary)
+# ✅ POC summary
 
 | Layer                 | Purpose             |
 | --------------------- | ------------------- |
@@ -170,19 +171,3 @@ On the test device:
 | Conditional Access    | Enforcement         |
 | Edge work profile     | Identity separation |
 | No MDM                | BYOD‑safe           |
-
-***
-
-## One‑sentence positioning (use this with customers)
-
-> **“This allows secure browser‑only access to Microsoft 365 on personal Windows devices without enrolling them into Intune.”**
-
-***
-
-If you want next, I can:
-
-*   Turn this into a **1‑page POC checklist**
-*   Give you a **rollback / cleanup plan**
-*   Provide a **known failure modes table** (what breaks MAM)
-
-Just say which one.
