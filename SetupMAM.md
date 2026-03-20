@@ -68,9 +68,12 @@ Configure (example baseline):
     *   Allow cut, copy and paste for: `Org data destinations and org data sources`
     *   Print org data: `Block`
 *   Health Checks:
-    *   Require PIN (optional, org choice)
-*   Conditional launch:
-    *   Block on unsupported OS versions
+    | Setting               | Value             | Action |
+    | --------------------- | ------------------- |  ------------------- |
+    | Offline grace period  | 1440 | Block Access (minutes) |
+    | Offline grace period | 90    | Wipe data (days) |
+    | Disabled account  | | Block access |
+*   Assignments: `MAM Users`
  
 <img height="450" alt="image" src="https://github.com/user-attachments/assets/ce977cdb-919f-4193-b0f2-def51e818c6b" />
 
@@ -86,20 +89,19 @@ You need **two CA policies**. This is not optional.
 
 ***
 
-### CA Policy 1 – Block desktop & mobile apps on unmanaged Windows
+### CA Policy 1:  MAM -Block desktop & mobile apps on unmanaged Windows
 
 **Microsoft Entra admin center → Conditional Access → New policy**
 
 *   Assignments:
-    *   Users: Target test group
-    *   Cloud apps: Microsoft 365 (or All cloud apps)
+    *   Users and Groups: `MAM Users`
+*   Target resources:
+    *   Cloud apps: `Office 365`
 *   Conditions:
-    *   Device platform: **Windows**
-    *   Client apps:
-        *   ✅ Mobile apps and desktop clients
-        *   ✅ Exchange ActiveSync
+    *   Device platform: `Windows`
+    *   Client apps: `Browser`
 *   Grant:
-    *   **Require device to be marked as compliant**
+    *   **Require app protection policy**
 
 ✅ Result:  
 Unmanaged devices **fail this policy**, blocking Outlook, Teams, etc.
@@ -127,25 +129,7 @@ Only **Edge with MAM** can access M365 from unmanaged devices
 
 ***
 
-## 5️⃣ Configure Edge behavior with App Configuration Policy
-
-This shapes the browser UX.
-
-**Intune admin center → Apps → App configuration policies → Add**
-
-*   Platform: Windows
-*   App: Microsoft Edge
-*   Examples:
-    *   Force work profile separation
-    *   Disable personal profile sync
-    *   Control extensions
-
-✅ Result:  
-Cleaner user experience and fewer support calls
-
-***
-
-## 6️⃣ End‑user sign‑in flow (what *must* happen)
+## 5️⃣ End‑user sign‑in flow (what *must* happen)
 
 When the user signs in to Edge:
 
@@ -159,7 +143,7 @@ When the user signs in to Edge:
 
 ***
 
-## 7️⃣ Validation (how to prove it works)
+## 6️⃣ Validation (how to prove it works)
 
 On the test device:
 
