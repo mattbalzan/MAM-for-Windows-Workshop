@@ -50,7 +50,7 @@ Edge MAM can consume basic Windows Security signals where supported.
 
 ***
 
-## 3️⃣ Create the **Windows App Protection Policy** (this is MAM)
+## 3️⃣ Create the **Windows App Protection Policy**
 
 This is the **core** of MAM for Windows.
 
@@ -86,16 +86,17 @@ Corporate data is **contained inside Edge’s work profile**
 
 ## 4️⃣ Create Conditional Access – **Block everything except Edge**
 
-You need **two CA policies**. This is not optional.
+This is not optional.
 
 ***
 
-### CA Policy 1:  MAM -Block desktop & mobile apps on unmanaged Windows
+### CA Policy 1:  ``MAM - Block desktop & mobile apps on unmanaged Windows``
 
 **Microsoft Entra admin center → Conditional Access → New policy**
 
 *   Assignments:
     *   Users and Groups: `MAM Users`
+    *   Exclude: `Admins`
 *   Target resources:
     *   Cloud apps: `Office 365`
 *   Conditions:
@@ -113,7 +114,7 @@ Unmanaged devices **fail this policy**, blocking Outlook, Teams, etc.
 
 ***
 
-### CA Policy 2: MAM - Allow browser access only via Edge
+### CA Policy 2: ``MAM - Allow browser access only via Edge``
 
 **New Conditional Access policy**
 
@@ -173,13 +174,13 @@ On the test device:
     *   Print from org → ❌ blocked
 
 ✅ This confirms Edge MAM is active.
+***
+
+# ✅ Troubleshooting MAM
+
+1.  Open new **Edge** tab.
+2.  Enter text: `Edge://edge-dlp-internals`.
+3.  Open the MamLog.txt file in `%temp%\Microsoft\Edge\User Data`.
+4.  Open the MamCache.json in same folder.
 
 
-# ✅ POC summary
-
-| Layer                 | Purpose             |
-| --------------------- | ------------------- |
-| App Protection Policy | Data containment    |
-| Conditional Access    | Enforcement         |
-| Edge work profile     | Identity separation |
-| No MDM                | BYOD‑safe           |
