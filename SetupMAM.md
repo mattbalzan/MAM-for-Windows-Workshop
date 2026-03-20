@@ -25,8 +25,11 @@ This prevents users bypassing Edge MAM by enrolling their personal device.
 *   Platform: **Windows**
 *   Personally owned: **Block**
 
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/4d9f1bce-2939-406c-a9d1-fbc1af74e24e" />
+
+
 ✅ Result:  
-Users stay **unmanaged**, which is required for Windows MAM to apply [\[learn.microsoft.com\]](https://learn.microsoft.com/en-us/intune/intune-service/apps/protect-mam-windows)
+Users stay **unmanaged**, which is required for Windows MAM to apply.
 
 ***
 
@@ -39,8 +42,11 @@ This allows **lightweight health signals** (not compliance).
 *   Add **Windows Security Center** connector
 *   Status may show *Unavailable* until first use — this is expected
 
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/379e8cce-9889-404b-999b-961f83cab50f" />
+
+
 ✅ Result:  
-Edge MAM can consume basic Windows Security signals where supported [\[https://fr...s/original\]](https://fr-prod.asyncgw.teams.microsoft.com/v1/objects/0-eus-d6-67d80315cdf90406d6dc43d502dca379/views/original)
+Edge MAM can consume basic Windows Security signals where supported.
 
 ***
 
@@ -64,11 +70,11 @@ Configure (example baseline):
 *   Conditional launch:
     *   Block on unsupported OS versions
  
-    *   <img width="1107" height="1064" alt="image" src="https://github.com/user-attachments/assets/ce977cdb-919f-4193-b0f2-def51e818c6b" />
+<img height="450" alt="image" src="https://github.com/user-attachments/assets/ce977cdb-919f-4193-b0f2-def51e818c6b" />
 
 
 ✅ Result:  
-Corporate data is **contained inside Edge’s work profile** [\[https://fr...s/original\]](https://fr-prod.asyncgw.teams.microsoft.com/v1/objects/0-eus-d6-67d80315cdf90406d6dc43d502dca379/views/original)
+Corporate data is **contained inside Edge’s work profile**
 
 ***
 
@@ -94,7 +100,7 @@ You need **two CA policies**. This is not optional.
     *   **Require device to be marked as compliant**
 
 ✅ Result:  
-Unmanaged devices **fail this policy**, blocking Outlook, Teams, etc. [\[learn.microsoft.com\]](https://learn.microsoft.com/en-us/intune/intune-service/apps/protect-mam-windows)
+Unmanaged devices **fail this policy**, blocking Outlook, Teams, etc.
 
 ***
 
@@ -115,7 +121,7 @@ Unmanaged devices **fail this policy**, blocking Outlook, Teams, etc. [\[learn.m
     *   (Optional) Defender for Cloud Apps controls
 
 ✅ Result:  
-Only **Edge with MAM** can access M365 from unmanaged devices [\[learn.microsoft.com\]](https://learn.microsoft.com/en-us/intune/intune-service/apps/protect-mam-windows)
+Only **Edge with MAM** can access M365 from unmanaged devices
 
 ***
 
@@ -133,7 +139,7 @@ This shapes the browser UX.
     *   Control extensions
 
 ✅ Result:  
-Cleaner user experience and fewer support calls [\[andrewstaylor.com\]](https://andrewstaylor.com/2023/08/03/byod-and-mam-for-windows-protecting-your-data-with-intune/)
+Cleaner user experience and fewer support calls
 
 ***
 
@@ -147,7 +153,7 @@ When the user signs in to Edge:
     *   ✅ **Uncheck** “Allow my organisation to manage my device”
     *   ✅ Continue
 
-⚠️ If the user allows device management, **MAM will not apply** [\[learn.microsoft.com\]](https://learn.microsoft.com/en-us/intune/intune-service/apps/protect-mam-windows)
+⚠️ If the user allows device management, **MAM will not apply**
 
 ***
 
@@ -164,11 +170,11 @@ On the test device:
 
 ✅ This confirms Edge MAM is active.
 
-<img width="629" height="502" alt="image" src="https://github.com/user-attachments/assets/e6fcf141-7382-4d3b-9069-dc7bc6e98563" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/e6fcf141-7382-4d3b-9069-dc7bc6e98563" />
 
-<img width="628" height="466" alt="image" src="https://github.com/user-attachments/assets/347623e3-4caf-48a9-aeb0-f7e30a8f70e6" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/347623e3-4caf-48a9-aeb0-f7e30a8f70e6" />
 
-<img width="1049" height="668" alt="image" src="https://github.com/user-attachments/assets/210ded78-c09e-4180-8447-fdca06d33da4" />
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/210ded78-c09e-4180-8447-fdca06d33da4" />
 
 
 
