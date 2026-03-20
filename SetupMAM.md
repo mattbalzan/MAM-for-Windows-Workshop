@@ -70,9 +70,9 @@ Configure (example baseline):
 
 *   Health Checks:
     | Setting               | Value             | Action |
-    | --------------------- | ------------------- |  ------------------- |
+    | --------------------- | ------------------- | ------------------- |
     | Offline grace period  | 1440 | Block Access (minutes) |
-    | Offline grace period | 90    | Wipe data (days) |
+    | Offline grace period | 90 | Wipe data (days) |
     | Disabled account  | | Block access |
 *   Assignments: `MAM Users`
  
@@ -147,7 +147,8 @@ When the user signs in to Edge:
     <img height="200" alt="image" src="https://github.com/user-attachments/assets/b0f7b6aa-c4ac-434a-a4ef-ec260638af87" />
 
     *   ✅ **Click** `No`
-   
+    <img height="200" alt="image" src="https://github.com/user-attachments/assets/9f57bbda-60b6-48de-9394-4ffe287aa4a2" />
+
 ⚠️ If the user allows device management, **MAM will not apply**
 
 ***
