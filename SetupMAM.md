@@ -58,14 +58,16 @@ This is the **core** of MAM for Windows.
 
 *   Platform: **Windows**
 *   App: **Microsoft Edge**
-*   Target: **User groups** (not devices)
+*   Target: **MAM Users** (not devices)
 
 Configure (example baseline):
 
-*   Data transfer:
-    *   Block copy/paste to unmanaged apps
-    *   Block Save As to local disk
-*   Access:
+*   Data Protection:
+    *   Receive data from : `All sources`
+    *   Send org data to: `No destinations`
+    *   Allow cut, copy and paste for: `Org data destinations and org data sources`
+    *   Print org data: `Block`
+*   Health Checks:
     *   Require PIN (optional, org choice)
 *   Conditional launch:
     *   Block on unsupported OS versions
