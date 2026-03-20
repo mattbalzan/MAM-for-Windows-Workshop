@@ -163,6 +163,11 @@ On the test device:
 
 <img width="629" height="502" alt="image" src="https://github.com/user-attachments/assets/e6fcf141-7382-4d3b-9069-dc7bc6e98563" />
 
+<img width="628" height="466" alt="image" src="https://github.com/user-attachments/assets/347623e3-4caf-48a9-aeb0-f7e30a8f70e6" />
+
+<img width="1049" height="668" alt="image" src="https://github.com/user-attachments/assets/210ded78-c09e-4180-8447-fdca06d33da4" />
+
+
 
 # ✅ POC summary
 
