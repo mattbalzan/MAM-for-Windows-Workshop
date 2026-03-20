@@ -1,4 +1,4 @@
->✅ Setup Steps: MAM for Windows (Edge MAM / MAM‑without‑Enrollment)
+>✅ Setup Steps: MAM for Windows (Edge MAM)
 
 ## 0️⃣ Prerequisites (MANDATORY)
 
@@ -10,8 +10,8 @@ These are **hard requirements**, not best practices.
     *   Windows 11 (recommended), or
     *   Windows 10 20H2+ with required cumulative updates
 *   Microsoft Edge (current Stable or Extended Stable)
-*   Entra ID User Target test group
-*   **Device must NOT be Intune‑enrolled** (MDM breaks MAM for Windows) [\[https://fr...s/original\]](https://fr-prod.asyncgw.teams.microsoft.com/v1/objects/0-eus-d6-67d80315cdf90406d6dc43d502dca379/views/original)
+*   Entra ID Group to target MAM users: `MAM Users` (this is my demo test group)
+*   **Device must NOT be Intune‑enrolled** (MDM breaks MAM for Windows)
 
 ***
 
