@@ -102,7 +102,7 @@ You need **two CA policies**. This is not optional.
     *   Device platform: `Windows`
     *   Client apps: `Browser`
 *   Grant:
-    *   **Require app protection policy**
+    *   Grant Access: **Require app protection policy**
 *   Session:
     *   Use Conditional Access App Control: `Block downloads (Preview)`
 *   Enable policy:
@@ -127,7 +127,7 @@ Unmanaged devices **fail this policy**, blocking Outlook, Teams, etc.
     *   Client apps: `Mobile apps and desktop clients`,`Exchange ActiveSync`,`Other clients`
     *   Filter for devices: Exclude rule `device.deviceOwnership -eq "Company"`
 *   Grant:
-    *   **Require device to be marked as compliant**
+    *   Grant Access: **Require device to be marked as compliant**
 *   Enable policy:
     *   `On`
 
@@ -143,9 +143,11 @@ When the user signs in to Edge:
 1.  User opens **Edge**
 2.  Signs in with **work account**
 3.  When prompted:
-    *   ✅ **Uncheck** “Allow my organisation to manage my device”
-    *   ✅ Continue
+    *   ✅ **Click** `Yes`
+    <img height="200" alt="image" src="https://github.com/user-attachments/assets/b0f7b6aa-c4ac-434a-a4ef-ec260638af87" />
 
+    *   ✅ **Click** `No`
+   
 ⚠️ If the user allows device management, **MAM will not apply**
 
 ***
