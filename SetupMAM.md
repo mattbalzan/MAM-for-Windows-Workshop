@@ -151,9 +151,14 @@ When the user signs in to Edge:
 
 ⚠️ If the user allows device management, **MAM will not apply**
 
+4. Edge Profile to access org resources will be setup.
+
+   <img height="200" alt="image" src="https://github.com/user-attachments/assets/58ed7bb3-6e28-4280-a9bb-7f6963d9979e" />
+
+
 ***
 
-## 6️⃣ Validation (how to prove it works)
+## 6️⃣ MAM Validation
 
 On the test device:
 
@@ -161,17 +166,13 @@ On the test device:
 *   Teams desktop → ❌ blocked
 *   Edge (work profile):
     *   SharePoint → ✅ allowed
+    *   Copy text from org Outlook → org Word ✅ allowed
     *   Copy text → ❌ blocked to Notepad
     *   Download file → ❌ blocked or redirected
+    *   Screen grab or snipping tool → ❌ blocked with black
+    *   Print from org → ❌ blocked
 
 ✅ This confirms Edge MAM is active.
-
-<img height="350" alt="image" src="https://github.com/user-attachments/assets/e6fcf141-7382-4d3b-9069-dc7bc6e98563" />
-
-<img height="350" alt="image" src="https://github.com/user-attachments/assets/347623e3-4caf-48a9-aeb0-f7e30a8f70e6" />
-
-<img height="350" alt="image" src="https://github.com/user-attachments/assets/210ded78-c09e-4180-8447-fdca06d33da4" />
-
 
 
 # ✅ POC summary
