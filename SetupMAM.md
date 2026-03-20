@@ -67,6 +67,7 @@ Configure (example baseline):
     *   Send org data to: `No destinations`
     *   Allow cut, copy and paste for: `Org data destinations and org data sources`
     *   Print org data: `Block`
+
 *   Health Checks:
     | Setting               | Value             | Action |
     | --------------------- | ------------------- |  ------------------- |
@@ -102,27 +103,33 @@ You need **two CA policies**. This is not optional.
     *   Client apps: `Browser`
 *   Grant:
     *   **Require app protection policy**
+*   Session:
+    *   Use Conditional Access App Control: `Block downloads (Preview)`
+*   Enable policy:
+    *   `On`
 
 ✅ Result:  
 Unmanaged devices **fail this policy**, blocking Outlook, Teams, etc.
 
 ***
 
-### CA Policy 2 – Allow browser access **only via Edge MAM**
+### CA Policy 2: MAM - Allow browser access only via Edge
 
 **New Conditional Access policy**
 
 *   Assignments:
-    *   Same user group
-    *   Same cloud apps
+    *   Users and Groups: `MAM Users`
+    *   Exclude: `Admins`
+*   Target resources:
+    *   Cloud apps: `All cloud apps`
 *   Conditions:
-    *   Device platform: **Windows**
-    *   Client apps: **Browser**
+    *   Device platform: `Windows`
+    *   Client apps: `Mobile apps and desktop clients`,`Exchange ActiveSync`,`Other clients`
+    *   Filter for devices: Exclude rule `device.deviceOwnership -eq "Company"`
 *   Grant:
-    *   ✅ Require **App Protection Policy**
-    *   ✅ (Optional) Also allow compliant devices
-*   Session:
-    *   (Optional) Defender for Cloud Apps controls
+    *   **Require device to be marked as compliant**
+*   Enable policy:
+    *   `On`
 
 ✅ Result:  
 Only **Edge with MAM** can access M365 from unmanaged devices
