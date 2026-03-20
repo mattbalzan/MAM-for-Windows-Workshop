@@ -63,6 +63,9 @@ Configure (example baseline):
     *   Require PIN (optional, org choice)
 *   Conditional launch:
     *   Block on unsupported OS versions
+ 
+    *   <img width="1107" height="1064" alt="image" src="https://github.com/user-attachments/assets/ce977cdb-919f-4193-b0f2-def51e818c6b" />
+
 
 ✅ Result:  
 Corporate data is **contained inside Edge’s work profile** [\[https://fr...s/original\]](https://fr-prod.asyncgw.teams.microsoft.com/v1/objects/0-eus-d6-67d80315cdf90406d6dc43d502dca379/views/original)
