@@ -161,7 +161,8 @@ On the test device:
 
 ✅ This confirms Edge MAM is active.
 
-***
+<img width="629" height="502" alt="image" src="https://github.com/user-attachments/assets/e6fcf141-7382-4d3b-9069-dc7bc6e98563" />
+
 
 # ✅ POC summary
 
