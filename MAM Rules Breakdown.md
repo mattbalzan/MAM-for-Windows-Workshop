@@ -1,4 +1,4 @@
-# MAM Settings/Polcy/Rules Breakdown
+# MAM Settings/Policy/Rules Breakdown
 
 <br>
 
@@ -120,3 +120,4 @@ Personal Windows device tries to access company data
         ├─ Print → ❌
         └─ Download → ❌
 ```
+🥳
