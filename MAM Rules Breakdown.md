@@ -2,7 +2,7 @@
 
 A plain-language breakdown of every setting in the MAM for Windows setup.
 
----
+
 
 ## Step 1 — Block BYOD Enrollment
 
@@ -11,7 +11,7 @@ A plain-language breakdown of every setting in the MAM for Windows setup.
 | Platform | Windows | This rule only applies to Windows devices |
 | Personally owned | **Block** | Users cannot enroll their personal devices into Intune. This is critical — if they enroll, full MDM kicks in and MAM won't work. |
 
----
+
 
 ## Step 2 — Windows Security Center Connector
 
@@ -19,7 +19,7 @@ A plain-language breakdown of every setting in the MAM for Windows setup.
 |---|---|---|
 | Connector | Windows Security Center | Lets Intune read basic security signals from the device (e.g., is antivirus on?). It's lightweight — not full device management. |
 
----
+
 
 ## Step 3 — App Protection Policy
 
@@ -46,7 +46,7 @@ A plain-language breakdown of every setting in the MAM for Windows setup.
 |---|---|---|
 | Assignments | MAM Users | The policy only applies to users in this Entra ID group — not to devices. MAM is always user-targeted. |
 
----
+
 
 ## Step 4 — Conditional Access Policies
 
@@ -76,7 +76,7 @@ A plain-language breakdown of every setting in the MAM for Windows setup.
 | Grant | Require device to be marked as compliant | Demands a compliant Intune-enrolled device. Since Step 1 blocks personal enrollment, personal devices **can never** meet this requirement → access denied. |
 | Enable policy | On | Policy is active |
 
----
+
 
 ## How It All Fits Together
 
