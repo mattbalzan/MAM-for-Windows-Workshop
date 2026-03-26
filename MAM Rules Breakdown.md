@@ -1,6 +1,6 @@
 # MAM Rules Breakdown
 
-A plain-language breakdown of every setting in the MAM for Windows setup.
+<br>
 
 
 
@@ -10,7 +10,7 @@ A plain-language breakdown of every setting in the MAM for Windows setup.
 |---|---|---|
 | Platform | Windows | This rule only applies to Windows devices |
 | Personally owned | **Block** | Users cannot enroll their personal devices into Intune. This is critical — if they enroll, full MDM kicks in and MAM won't work. |
-
+<br>
 
 
 ## Step 2 — Windows Security Center Connector
@@ -18,7 +18,7 @@ A plain-language breakdown of every setting in the MAM for Windows setup.
 | Setting | Value | What it means |
 |---|---|---|
 | Connector | Windows Security Center | Lets Intune read basic security signals from the device (e.g., is antivirus on?). It's lightweight — not full device management. |
-
+<br>
 
 
 ## Step 3 — App Protection Policy
@@ -31,6 +31,7 @@ A plain-language breakdown of every setting in the MAM for Windows setup.
 | Send org data to | No destinations | Users **cannot** move company data **out** of Edge's work profile to any personal app. (Data stays locked in.) |
 | Allow cut, copy, paste for | Org data destinations and org data sources | Copy/paste only works **between org apps** (e.g., org Outlook → org Word in Edge). Pasting to Notepad or personal apps is blocked. |
 | Print org data | Block | Users cannot print anything from the work profile. No PDF, no physical printer. |
+<br>
 
 ### Health Checks
 
@@ -45,7 +46,7 @@ A plain-language breakdown of every setting in the MAM for Windows setup.
 | Setting | Value | What it means |
 |---|---|---|
 | Assignments | MAM Users | The policy only applies to users in this Entra ID group — not to devices. MAM is always user-targeted. |
-
+<br>
 
 
 ## Step 4 — Conditional Access Policies
@@ -63,6 +64,13 @@ A plain-language breakdown of every setting in the MAM for Windows setup.
 | Session → App Control | Block downloads (Preview) | Even in the allowed Edge browser, file downloads are blocked. Data stays in the browser. |
 | Enable policy | On | Policy is active (not in report-only mode) |
 
+```
+This policy says: When someone in the MAM Users group tries to access any cloud app using desktop clients (like Outlook, Teams), mobile apps, ActiveSync, or other clients on a non-corporate Windows device, they must have a compliant (Intune-enrolled) device. Since BYOD enrollment is blocked in Step 1, personal devices can never satisfy this requirement.
+
+Summary: All native apps (Outlook, Teams, etc.) are completely blocked on personal devices. There's no way around it — the only door in is Edge with MAM from Policy 1.
+```
+<br>
+
 ### CA Policy 2: Block all native/desktop apps on personal devices
 
 | Setting | Value | What it means |
@@ -76,7 +84,12 @@ A plain-language breakdown of every setting in the MAM for Windows setup.
 | Grant | Require device to be marked as compliant | Demands a compliant Intune-enrolled device. Since Step 1 blocks personal enrollment, personal devices **can never** meet this requirement → access denied. |
 | Enable policy | On | Policy is active |
 
+```
+This policy says: When someone in the MAM Users group tries to access Office 365 through a browser on an unmanaged Windows device, they must have an app protection policy applied (i.e., they must be using Edge with MAM). It also blocks file downloads from the browser session.
 
+Summary: You can only use Office 365 in a browser if that browser is Edge with MAM protection. No downloading files either.
+```
+<br>
 
 ## How It All Fits Together
 
