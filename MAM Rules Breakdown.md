@@ -1,7 +1,6 @@
-# MAM Rules Breakdown
+# MAM Settings/Polcy/Rules Breakdown
 
 <br>
-
 
 
 ## Step 1 — Block BYOD Enrollment
@@ -92,7 +91,7 @@ There's no way around it — the only door in is Edge with MAM from Policy 1.
 This policy says: When someone in the MAM Users group tries to access Office 365 
 through a browser on an unmanaged Windows device, they must have an app protection policy
 applied (i.e., they must be using Edge with MAM). 
- It also blocks file downloads from the browser session.
+It also blocks file downloads from the browser session.
 
 Summary: You can only use Office 365 in a browser if that browser is Edge with MAM protection.
 No downloading files either.
