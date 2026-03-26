@@ -65,9 +65,13 @@
 | Enable policy | On | Policy is active (not in report-only mode) |
 
 ```
-This policy says: When someone in the MAM Users group tries to access any cloud app using desktop clients (like Outlook, Teams), mobile apps, ActiveSync, or other clients on a non-corporate Windows device, they must have a compliant (Intune-enrolled) device. Since BYOD enrollment is blocked in Step 1, personal devices can never satisfy this requirement.
+This policy says: When someone in the MAM Users group tries to access any cloud app 
+using desktop clients (like Outlook, Teams), mobile apps, ActiveSync, or other clients
+on a non-corporate Windows device, they must have a compliant (Intune-enrolled) device. 
+Since BYOD enrollment is blocked in Step 1, personal devices can never satisfy this requirement.
 
-Summary: All native apps (Outlook, Teams, etc.) are completely blocked on personal devices. There's no way around it — the only door in is Edge with MAM from Policy 1.
+Summary: All native apps (Outlook, Teams, etc.) are completely blocked on personal devices.
+There's no way around it — the only door in is Edge with MAM from Policy 1.
 ```
 <br>
 
@@ -85,9 +89,13 @@ Summary: All native apps (Outlook, Teams, etc.) are completely blocked on person
 | Enable policy | On | Policy is active |
 
 ```
-This policy says: When someone in the MAM Users group tries to access Office 365 through a browser on an unmanaged Windows device, they must have an app protection policy applied (i.e., they must be using Edge with MAM). It also blocks file downloads from the browser session.
+This policy says: When someone in the MAM Users group tries to access Office 365 
+through a browser on an unmanaged Windows device, they must have an app protection policy
+applied (i.e., they must be using Edge with MAM). 
+ It also blocks file downloads from the browser session.
 
-Summary: You can only use Office 365 in a browser if that browser is Edge with MAM protection. No downloading files either.
+Summary: You can only use Office 365 in a browser if that browser is Edge with MAM protection.
+No downloading files either.
 ```
 <br>
 
