@@ -154,9 +154,12 @@ When the user signs in to Edge:
 
 4. Edge Profile to access org resources will be setup.
 
-   <img height="200" alt="image" src="https://github.com/user-attachments/assets/58ed7bb3-6e28-4280-a9bb-7f6963d9979e" />
 
-![alt text](image-1.png)
+![Select Sync data prompt](image-1.png)
+
+<img height="200" alt="image" src="https://github.com/user-attachments/assets/58ed7bb3-6e28-4280-a9bb-7f6963d9979e" />
+
+
 ***
 
 ## 6️⃣ MAM Validation
