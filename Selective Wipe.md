@@ -57,6 +57,10 @@ Use this when you want to wipe org data from **all** of a user's devices at once
 
 > Completed wipe requests remain in the report for **4 days** after completion. Pending requests remain for the sum of the *Offline grace period wipe data* value + 4 days (default: 94 days total).
 
+<br>
+
+![MAMLog.txt](image.png)
+
 ---
 
 ## Delete a Wipe Request
