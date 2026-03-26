@@ -59,6 +59,7 @@ Use this when you want to wipe org data from **all** of a user's devices at once
 
 <br>
 
+> The MAMLog.txt will show the received wipe command and when it processes it.
 ![MAMLog.txt](image.png)
 
 ---
