@@ -156,7 +156,7 @@ When the user signs in to Edge:
 
    <img height="200" alt="image" src="https://github.com/user-attachments/assets/58ed7bb3-6e28-4280-a9bb-7f6963d9979e" />
 
-
+![alt text](image-1.png)
 ***
 
 ## 6️⃣ MAM Validation
