@@ -50,7 +50,7 @@
 
 ## Step 4 — Conditional Access Policies
 
-### CA Policy 1: Block everything except protected Edge browser
+### CA Policy 1: MAM - GRANT require App Protection Policy for Unmanaged Devices
 
 | Setting | Value | What it means |
 |---|---|---|
@@ -59,8 +59,8 @@
 | Cloud apps | Office 365 | Targets all Office 365 apps (SharePoint, Outlook web, etc.) |
 | Device platform | Windows | Only fires on Windows devices |
 | Client apps | Browser | This policy only evaluates **browser** access |
+| Filter for devices | Exclude: `device.trustType -ne "AzureAD" -and device.trustType -ne "ServerAD"` | Corporate/managed devices are **excluded** from this block. The policy only hits personal/unmanaged devices. |
 | Grant | Require app protection policy | The browser must have a MAM policy applied — only Edge with MAM satisfies this. Chrome/Firefox will be blocked. |
-| Session → App Control | Block downloads (Preview) | Even in the allowed Edge browser, file downloads are blocked. Data stays in the browser. |
 | Enable policy | On | Policy is active (not in report-only mode) |
 
 ```
@@ -74,7 +74,7 @@ There's no way around it — the only door in is Edge with MAM from Policy 1.
 ```
 <br>
 
-### CA Policy 2: Block all native/desktop apps on personal devices
+### CA Policy 2: MAM - BLOCK office desktop apps on unmanaged Windows
 
 | Setting | Value | What it means |
 |---|---|---|
@@ -83,7 +83,7 @@ There's no way around it — the only door in is Edge with MAM from Policy 1.
 | Cloud apps | All cloud apps | Broader than Policy 1 — covers **everything**, not just Office 365 |
 | Device platform | Windows | Only fires on Windows |
 | Client apps | Mobile apps and desktop clients, Exchange ActiveSync, Other clients | Targets **every non-browser client** — Outlook desktop, Teams app, ActiveSync mail, etc. |
-| Filter for devices | Exclude: `device.deviceOwnership -eq "Company"` | Corporate/managed devices are **excluded** from this block. The policy only hits personal/unmanaged devices. |
+| Filter for devices | Exclude: `device.trustType -ne "AzureAD" -and device.trustType -ne "ServerAD"` | Corporate/managed devices are **excluded** from this block. The policy only hits personal/unmanaged devices. |
 | Grant | Require device to be marked as compliant | Demands a compliant Intune-enrolled device. Since Step 1 blocks personal enrollment, personal devices **can never** meet this requirement → access denied. |
 | Enable policy | On | Policy is active |
 
