@@ -26,7 +26,7 @@
 
 | Setting | Value | What it means |
 |---|---|---|
-| Receive data from | All sources | Users **can** paste/import data from personal apps **into** the work profile in Edge. (Lets them bring data in.) |
+| Receive data from | No sources | Users **cannot** paste/import data from personal apps **into** the work profile in Edge. (Data stays locked out.) |
 | Send org data to | No destinations | Users **cannot** move company data **out** of Edge's work profile to any personal app. (Data stays locked in.) |
 | Allow cut, copy, paste for | Org data destinations and org data sources | Copy/paste only works **between org apps** (e.g., org Outlook → org Word in Edge). Pasting to Notepad or personal apps is blocked. |
 | Print org data | Block | Users cannot print anything from the work profile. No PDF, no physical printer. |
