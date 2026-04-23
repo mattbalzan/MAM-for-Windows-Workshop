@@ -136,6 +136,26 @@ Only **Edge with MAM** can access M365 from unmanaged devices
 
 ***
 
+### Edge Configuration policy: ``Enable Protected Downloads``
+
+Go to `admin.microsoft.com` → `Settings` → `Microsoft Edge`
+
+Create a Configuration Policy
+* Create a new Configuration Policy targeted to the intended MAM users:
+
+   * Ensure Windows 10+ is selected for platforms
+   * Set policy type to Cloud
+   * No additional settings need to be added when creating the policy
+   * Under Assignments, select the same user group receiving your MAM/CA policies (MAM Users)
+
+Enable Protected Downloads
+* After the Configuration Policy has been created and saved, navigate within it to:
+
+`Customization Settings` → `Security Settings` → `Protected Downloads` → Enable
+
+Important: This setting is only available after the policy is created and saved. You cannot configure it during initial creation. You must go back into the saved policy to find the Customization Settings section.
+***
+
 ## 5️⃣ End‑user sign‑in flow (what *must* happen)
 
 When the user signs in to Edge:
@@ -178,11 +198,25 @@ On the test device:
 ✅ This confirms Edge MAM is active.
 ***
 
-# ✅ Troubleshooting MAM
+# ✅ Troubleshooting Checklist
 
 1.  Open new **Edge** tab.
 2.  Enter text: `Edge://edge-dlp-internals`.
 3.  Open the MamLog.txt file in `%temp%\Microsoft\Edge\User Data`.
 4.  Open the MamCache.json in same folder.
 
+✅ If Downloads Are Blocked Entirely (No OD4B Redirect)
+* Missing Edge Management Policy: The most common issue. Verify that the Configuration Policy in admin.microsoft.com exists, targets the correct users, and has "Protected Downloads" enabled under Customization Settings → Security Settings
+* Policy not yet saved: The "Protected Downloads" toggle is only visible after the Configuration Policy is created and saved. Go back into the saved policy to enable it
+* User group mismatch: The Intune APP and Edge Management Configuration Policy must target the same users. Check group membership in both portals
+* Policy propagation delay: Allow up to 4-8 hours for policy to propagate. User can force sync by signing out and back into Edge
 
+✅ If Downloads Go to Local Disk Instead of OD4B
+* APP not set to "No destinations": If Send org data to is set to All destinations, downloads proceed normally and Protected Downloads never activates. Must be No destinations
+* OneDrive sync client not signed in: The user's OneDrive sync client must be signed in with their corporate account. Without it, there's no local OD4B path for Edge to redirect to
+* Device is MDM-enrolled: MAM policies do not apply on enrolled devices. If the device is Entra ID Joined or MDM managed, the APP is not enforced
+
+✅ If the "Microsoft Edge Downloads" Folder Doesn't Appear in OD4B
+* First download triggers creation: The folder is created automatically on the first Protected Download. It won't exist until a user actually downloads a file
+* OD4B quota: Verify the user has sufficient OD4B storage quota
+* Sync conflicts: If OneDrive sync is paused or encountering errors, files may queue but not appear. Check sync client status
