@@ -136,9 +136,9 @@ Only **Edge with MAM** can access M365 from unmanaged devices
 
 ***
 
-### Edge Configuration policy: ``Enable Protected Downloads``
+### 5️⃣ Edge Configuration policy: ``Enable Protected Downloads``
 
-Go to `admin.microsoft.com` → `Settings` → `Microsoft Edge`
+Go to `admin.microsoft.com` → `Settings` → `Microsoft Edge` (requires Az Role: `Edge Administrator`)
 
 Create a Configuration Policy
 * Create a new Configuration Policy targeted to the intended MAM users:
@@ -151,33 +151,37 @@ Create a Configuration Policy
 Enable Protected Downloads
 * After the Configuration Policy has been created and saved, navigate within it to:
 
-`Customization Settings` → `Security Settings` → `Protected Downloads` → Enable
+`Customization Settings` → `Security Settings` → `Protected Downloads` → **Enable**
 
 Important: This setting is only available after the policy is created and saved. You cannot configure it during initial creation. You must go back into the saved policy to find the Customization Settings section.
 ***
 
 ## 5️⃣ End‑user sign‑in flow (what *must* happen)
 
-When the user signs in to Edge:
+When the user signs in to OneDrive app in taskbar:
 
-1.  User opens **Edge**
-2.  Signs in with **work account**
-3.  When prompted:
-    *   ✅ **Click** `Yes`
-    <img height="200" alt="image" src="https://github.com/user-attachments/assets/b0f7b6aa-c4ac-434a-a4ef-ec260638af87" />
+1. Signs in with **work account**
+2. When prompted `Sign in to all apps and websites on this device?` → ✅ **Yes**
+3. When prompted `Allow your org to manage your device?` → ✅ **No**
 
-    *   ✅ **Click** `No`
-    <img height="200" alt="image" src="https://github.com/user-attachments/assets/9f57bbda-60b6-48de-9394-4ffe287aa4a2" />
+   ⚠️ If the user allows device management, **MAM will not apply**.
+<br> 
+<img height="200" alt="image" src="https://github.com/user-attachments/assets/b0f7b6aa-c4ac-434a-a4ef-ec260638af87" />
 
-⚠️ If the user allows device management, **MAM will not apply**
+<br> 
 
-4. Edge Profile to access org resources will be setup.
+<img height="200" alt="image" src="https://github.com/user-attachments/assets/9f57bbda-60b6-48de-9394-4ffe287aa4a2" />
+<br>
 
+4. User opens **Edge**
 
-![Select Sync data prompt](image-1.png)
+5. Click **OK** to sync data
 
+<br>  
 <img height="200" alt="image" src="https://github.com/user-attachments/assets/58ed7bb3-6e28-4280-a9bb-7f6963d9979e" />
+<br>  
 
+6. Edge Profile to access org resources will be setup.
 
 ***
 
@@ -196,11 +200,12 @@ On the test device:
     *   Print from org → ❌ blocked
 
 ✅ This confirms Edge MAM is active.
+
 ***
 
-✅ Troubleshooting Checklist
+## ✅ Troubleshooting Checklist
 
-✅ Check Edge MAM Policies
+✅ Check Edge & MAM Policies have landed
 *  Open new **Edge** tab → Enter URL: `Edge://edge-dlp-internals`
 *  Open the **MamLog.txt** file → `%temp%\Microsoft\Edge\User Data`
 *  Open the **MamCache.json** in same folder.
