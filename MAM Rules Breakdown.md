@@ -80,7 +80,7 @@ There's no way around it — the only door in is Edge with MAM from Policy 1.
 |---|---|---|
 | Users | MAM Users | Same user group |
 | Exclude | Admins | Same admin exemption |
-| Cloud apps | All cloud apps | Broader than Policy 1 — covers **everything**, not just Office 365 |
+| Cloud apps | Office 365 | Targets all Office 365 apps (SharePoint, Outlook web, etc.) |
 | Device platform | Windows | Only fires on Windows |
 | Client apps | Mobile apps and desktop clients, Exchange ActiveSync, Other clients | Targets **every non-browser client** — Outlook desktop, Teams app, ActiveSync mail, etc. |
 | Filter for devices | Exclude: `device.trustType -ne "AzureAD" -and device.trustType -ne "ServerAD"` | Corporate/managed devices are **excluded** from this block. The policy only hits personal/unmanaged devices. |
