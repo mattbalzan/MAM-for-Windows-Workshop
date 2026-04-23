@@ -75,8 +75,8 @@ Configure (example baseline):
     | Offline grace period | 90 | Wipe data (days) |
     | Disabled account  | | Block access |
 *   Assignments: `MAM Users`
- 
-<img height="450" alt="image" src="https://github.com/user-attachments/assets/ce977cdb-919f-4193-b0f2-def51e818c6b" />
+
+<img height="450" alt="image" src="https://github.com/user-attachments/assets/76303a6e-fbf3-4162-9c4a-d72f9a5a5843" />
 
 
 ✅ Result:  
@@ -90,22 +90,21 @@ This is not optional.
 
 ***
 
-### CA Policy 1:  ``MAM - Block desktop & mobile apps on unmanaged Windows``
+### CA Policy 1:  ``MAM - GRANT require App Protection Policy for Unmanaged Devices``
 
 **Microsoft Entra admin center → Conditional Access → New policy**
 
 *   Assignments:
     *   Users and Groups: `MAM Users`
-    *   Exclude: `Admins`
+    *   Exclude: `Break Glass Admins`
 *   Target resources:
     *   Cloud apps: `Office 365`
 *   Conditions:
     *   Device platform: `Windows`
     *   Client apps: `Browser`
+    *   Filter for devices: Exclude rule `device.trustType -ne "AzureAD" -and device.trustType -ne "ServerAD"`
 *   Grant:
     *   Grant Access: **Require app protection policy**
-*   Session:
-    *   Use Conditional Access App Control: `Block downloads (Preview)`
 *   Enable policy:
     *   `On`
 
@@ -114,19 +113,19 @@ Unmanaged devices **fail this policy**, blocking Outlook, Teams, etc.
 
 ***
 
-### CA Policy 2: ``MAM - Allow browser access only via Edge``
+### CA Policy 2: ``MAM - BLOCK office desktop apps on unmanaged Windows``
 
 **New Conditional Access policy**
 
 *   Assignments:
     *   Users and Groups: `MAM Users`
-    *   Exclude: `Admins`
+    *   Exclude: `Break Glass Admins`
 *   Target resources:
-    *   Cloud apps: `All cloud apps`
+    *   Cloud apps: `Office 365`
 *   Conditions:
     *   Device platform: `Windows`
     *   Client apps: `Mobile apps and desktop clients`,`Exchange ActiveSync`,`Other clients`
-    *   Filter for devices: Exclude rule `device.deviceOwnership -eq "Company"`
+    *   Filter for devices: Exclude rule `device.trustType -ne "AzureAD" -and device.trustType -ne "ServerAD"`
 *   Grant:
     *   Grant Access: **Require device to be marked as compliant**
 *   Enable policy:
