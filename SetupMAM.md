@@ -198,12 +198,12 @@ On the test device:
 ✅ This confirms Edge MAM is active.
 ***
 
-# ✅ Troubleshooting Checklist
+✅ Troubleshooting Checklist
 
-1.  Open new **Edge** tab.
-2.  Enter text: `Edge://edge-dlp-internals`.
-3.  Open the MamLog.txt file in `%temp%\Microsoft\Edge\User Data`.
-4.  Open the MamCache.json in same folder.
+✅ Check Edge MAM Policies
+*  Open new **Edge** tab → Enter URL: `Edge://edge-dlp-internals`
+*  Open the **MamLog.txt** file → `%temp%\Microsoft\Edge\User Data`
+*  Open the **MamCache.json** in same folder.
 
 ✅ If Downloads Are Blocked Entirely (No OD4B Redirect)
 * Missing Edge Management Policy: The most common issue. Verify that the Configuration Policy in admin.microsoft.com exists, targets the correct users, and has "Protected Downloads" enabled under Customization Settings → Security Settings
