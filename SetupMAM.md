@@ -19,7 +19,7 @@ These are **hard requirements**, not best practices.
 
 This prevents users bypassing Edge MAM by enrolling their personal device.
 
-**Intune admin center → Devices → Enrollment → Device platform restrictions**
+**`Intune admin center` → `Devices` → `Enrollment` → `Device platform restrictions`**
 
 *   Edit **Default** or create a scoped policy
 *   Platform: **Windows**
@@ -37,7 +37,7 @@ Users stay **unmanaged**, which is required for Windows MAM to apply.
 
 This allows **lightweight health signals** (not compliance).
 
-**Intune admin center → Tenant administration → Connectors and tokens → Mobile Threat Defense**
+**`Intune admin center` → `Tenant administration` → `Connectors and tokens` → `Mobile Threat Defense`**
 
 *   Add **Windows Security Center** connector
 *   Status may show *Unavailable* until first use — this is expected
@@ -54,7 +54,7 @@ Edge MAM can consume basic Windows Security signals where supported.
 
 This is the **core** of MAM for Windows.
 
-**Intune admin center → Apps → App protection policies → Create policy**
+**`Intune admin center` → `Apps` → `App protection policies` → `Create policy`**
 
 *   Platform: **Windows**
 *   App: **Microsoft Edge**
@@ -92,7 +92,7 @@ This is not optional.
 
 ### CA Policy 1:  ``MAM - GRANT require App Protection Policy for Unmanaged Devices``
 
-**Microsoft Entra admin center → Conditional Access → New policy**
+**`Microsoft Entra admin center` → `Conditional Access` → `New policy`**
 
 *   Assignments:
     *   Users and Groups: `MAM Users`
@@ -138,7 +138,7 @@ Only **Edge with MAM** can access M365 from unmanaged devices
 
 ### 5️⃣ Edge Configuration policy: ``Enable Protected Downloads``
 
-Go to `admin.microsoft.com` → `Settings` → `Microsoft Edge` (requires Az Role: `Edge Administrator`)
+**`admin.microsoft.com` → `Settings` → `Microsoft Edge`** (requires Az Role: `Edge Administrator`)
 
 Create a Configuration Policy
 * Create a new Configuration Policy targeted to the intended MAM users:
@@ -151,7 +151,7 @@ Create a Configuration Policy
 Enable Protected Downloads
 * After the Configuration Policy has been created and saved, navigate within it to:
 
-`Customization Settings` → `Security Settings` → `Protected Downloads` → **Enable**
+**`Customization Settings` → `Security Settings` → `Protected Downloads` → `Enable`**
 
 Important: This setting is only available after the policy is created and saved. You cannot configure it during initial creation. You must go back into the saved policy to find the Customization Settings section.
 ***
