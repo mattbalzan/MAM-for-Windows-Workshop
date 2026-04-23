@@ -63,7 +63,7 @@ This is the **core** of MAM for Windows.
 Configure (example baseline):
 
 *   Data Protection:
-    *   Receive data from : `All sources`
+    *   Receive data from : `No sources`
     *   Send org data to: `No destinations`
     *   Allow cut, copy and paste for: `Org data destinations and org data sources`
     *   Print org data: `Block`
