@@ -172,7 +172,7 @@ On the test device:
     *   SharePoint → ✅ allowed
     *   Copy text from org Outlook → org Word ✅ allowed
     *   Copy text → ❌ blocked to Notepad
-    *   Download file → ❌ blocked or redirected
+    *   Download file from Outlook org → ❌ blocked or redirected to OD4B (needs to be signed in OD4B).
     *   Screen grab or snipping tool → ❌ blocked with black
     *   Print from org → ❌ blocked
 
