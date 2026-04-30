@@ -102,7 +102,7 @@ This is not optional.
 *   Conditions:
     *   Device platform: `Windows`
     *   Client apps: `Browser`
-    *   Filter for devices: Exclude rule `device.trustType -ne "AzureAD" -and device.trustType -ne "ServerAD"`
+    *   Filter for devices: Exclude rule `device.trustType -eq "AzureAD" -and device.trustType -eq "ServerAD"`
 *   Grant:
     *   Grant Access: **Require app protection policy**
 *   Enable policy:
@@ -125,7 +125,7 @@ Unmanaged devices **fail this policy**, blocking Outlook, Teams, etc.
 *   Conditions:
     *   Device platform: `Windows`
     *   Client apps: `Mobile apps and desktop clients`,`Exchange ActiveSync`,`Other clients`
-    *   Filter for devices: Exclude rule `device.trustType -ne "AzureAD" -and device.trustType -ne "ServerAD"`
+    *   Filter for devices: Exclude rule `device.trustType -eq "AzureAD" -and device.trustType -eq "ServerAD"`
 *   Grant:
     *   Grant Access: **Require device to be marked as compliant**
 *   Enable policy:
@@ -158,7 +158,7 @@ Important: This setting is only available after the policy is created and saved.
 
 ## 5️⃣ End‑user sign‑in flow (what *must* happen)
 
-When the user signs in to OneDrive app in taskbar:
+When the user signs in to Edge:
 
 1. Signs in with **work account**
 2. When prompted `Sign in to all apps and websites on this device?` → ✅ **Yes**
@@ -173,15 +173,13 @@ When the user signs in to OneDrive app in taskbar:
 <img height="200" alt="image" src="https://github.com/user-attachments/assets/9f57bbda-60b6-48de-9394-4ffe287aa4a2" />
 <br>
 
-4. User opens **Edge**
-
-5. Click **OK** to sync data
+4. Click **OK** to sync data
 
 <br>  
 <img height="200" alt="image" src="https://github.com/user-attachments/assets/58ed7bb3-6e28-4280-a9bb-7f6963d9979e" />
 <br>  
 
-6. Edge Profile to access org resources will be setup.
+5. Edge Profile to access org resources will be setup.
 
 ***
 
@@ -195,8 +193,9 @@ On the test device:
     *   SharePoint → ✅ allowed
     *   Copy text from org Outlook → org Word ✅ allowed
     *   Copy text → ❌ blocked to Notepad
-    *   Download file from Outlook org → ❌ blocked or redirected to OD4B (needs to be signed in OD4B).
-    *   Screen grab or snipping tool → ❌ blocked with black
+    *   Download file from Outlook org → ❌ blocked
+    *   Send file to OneDrive <ORG> from Outlook org → ✅ allowed (file syncs to OD4B Attachments folder)
+    *   Screen grab or snipping tool → ❌ blocked with black screen
     *   Print from org → ❌ blocked
 
 ✅ This confirms Edge MAM is active.
