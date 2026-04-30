@@ -139,8 +139,14 @@ Important: This setting is only available after the policy is created and saved.
 When the user signs in to Edge:
 
 1. Signs in with **work account**
-2. When prompted `Sign in to all apps and websites on this device?` → ✅ **Yes**
-3. When prompted `Allow your org to manage your device?` → ✅ **No**
+
+<br>
+<img height="200" alt="image" src="https://github.com/user-attachments/assets/ace8206d-60a7-4ce0-bc01-b87b3676d04f" />
+
+<br>
+   
+3. When prompted `Sign in to all apps and websites on this device?` → ✅ **Yes**
+4. When prompted `Allow your org to manage your device?` → ✅ **No**
 
    ⚠️ If the user allows device management, **MAM will not apply**.
 <br> 
