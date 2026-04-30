@@ -90,7 +90,7 @@ This is not optional.
 
 ***
 
-### CA Policy 1:  ``MAM - GRANT require App Protection Policy for Unmanaged Devices``
+### CA Policy:  ``MAM - GRANT Edge CA``
 
 **`Microsoft Entra admin center` → `Conditional Access` → `New policy`**
 
@@ -110,29 +110,6 @@ This is not optional.
 
 ✅ Result:  
 Unmanaged devices **fail this policy**, blocking Outlook, Teams, etc.
-
-***
-
-### CA Policy 2: ``MAM - BLOCK office desktop apps on unmanaged Windows``
-
-**New Conditional Access policy**
-
-*   Assignments:
-    *   Users and Groups: `MAM Users`
-    *   Exclude: `Break Glass Admins`
-*   Target resources:
-    *   Cloud apps: `Office 365`
-*   Conditions:
-    *   Device platform: `Windows`
-    *   Client apps: `Mobile apps and desktop clients`,`Exchange ActiveSync`,`Other clients`
-    *   Filter for devices: Exclude rule `device.trustType -eq "AzureAD" -and device.trustType -eq "ServerAD"`
-*   Grant:
-    *   Grant Access: **Require device to be marked as compliant**
-*   Enable policy:
-    *   `On`
-
-✅ Result:  
-Only **Edge with MAM** can access M365 from unmanaged devices
 
 ***
 
