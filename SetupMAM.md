@@ -74,7 +74,7 @@ Configure (example baseline):
     | Offline grace period  | 1440 | Block Access (minutes) |
     | Offline grace period | 90 | Wipe data (days) |
     | Disabled account  | | Block access |
-    | ax allowed device threat level  | Secured | Block access |
+    | Max allowed device threat level  | Secured | Block access |
 *   Assignments: `MAM Users`
 
 <img height="450" alt="image" src="https://github.com/user-attachments/assets/505d701e-c43d-412e-994b-f7fd58fd431d" />
